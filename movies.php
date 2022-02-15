@@ -18,7 +18,7 @@ class Movie
     public $movie_directors;
 
     //COSTRUCT
-    public function __construct(string $name, int $year, string $actors, string $movie_directors)
+    public function __construct(string $name, int $year, $actors, string $movie_directors)
     {
         $this->name = $name;
         $this->year = $year;
@@ -101,4 +101,20 @@ class Movie
       return $this->movie_director;
     }
 }
+
+$movie_1 = new Movie('Interstellar', 2014, ['Matthew McConaughey', 'Anne Hathaway', 'Jessica Chastain', 'Michael Caine', 'John Lithgow'], 'Christopher Nolan');
+$movie_1->setDuration(169);
+$movie_1->setLanguage('en');
+$movie_1->setBudget(165000000);
+$movie_1->setGenres(['fantascienza', 'avventura', 'drammatico']);
+
+
+$movie_2 = new Movie('Donnie Darko', 2001, ['Jake Gyllenhaal', 'Jena Malone', 'JDrew Barrymore', 'Mary McDonnell:', 'Maggie Gyllenhaal'], 'Richard Kelly');
+$movie_2->setDuration(133);
+$movie_2->setLanguage('en');
+$movie_2->setBudget(45000000);
+$movie_2->setGenres(['fantascienza', 'thriller', 'drammatico']);
+
+var_dump($movie_1);
+var_dump($movie_2);
 ?>
