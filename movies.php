@@ -98,7 +98,7 @@ class Movie
     }
     public function getMovie_director()
     {
-      return $this->movie_director;
+      return $this->movie_directors;
     }
 }
 
@@ -107,6 +107,13 @@ $movie_1->setDuration(169);
 $movie_1->setLanguage('en');
 $movie_1->setBudget(165000000);
 $movie_1->setGenres(['fantascienza', 'avventura', 'drammatico']);
+$budget_film_1 = $movie_1->getBudget();
+$duration_film_1 = $movie_1->getDuration();
+$language_film_1 = $movie_1->getLanguage();
+$nome_film_1 = $movie_1->getName();
+$actors_film_1 = $movie_1->getActors();
+$movie_director_film_1 = $movie_1->getMovie_director();
+$genres_film_1 = $movie_1->getGenres();
 
 
 $movie_2 = new Movie('Donnie Darko', 2001, ['Jake Gyllenhaal', 'Jena Malone', 'JDrew Barrymore', 'Mary McDonnell:', 'Maggie Gyllenhaal'], 'Richard Kelly');
@@ -114,7 +121,75 @@ $movie_2->setDuration(133);
 $movie_2->setLanguage('en');
 $movie_2->setBudget(45000000);
 $movie_2->setGenres(['fantascienza', 'thriller', 'drammatico']);
+$budget_film_2 = $movie_2->getBudget();
+$duration_film_2 = $movie_2->getDuration();
+$language_film_2 = $movie_2->getLanguage();
+$nome_film_2 = $movie_2->getName();
+$actors_film_2 = $movie_2->getActors();
+$movie_director_film_2 = $movie_2->getMovie_director();
+$genres_film_2 = $movie_2->getGenres();
 
-var_dump($movie_1);
-var_dump($movie_2);
+
+if ($budget_film_1 > $budget_film_2) {
+    echo 'Film più costoso: '. $nome_film_1; 
+} else {
+    echo 'Film più costoso: '. $nome_film_2;  
+}
+
+//var_dump($movie_1);
+//var_dump($movie_2);
 ?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="div">
+        <h1><?= $nome_film_1 ?></h1>
+        <ul>
+            <li>Budget: <?= $budget_film_1 ?> &euro;</li>
+            <li>Duration: <?= $duration_film_1 ?> min</li>
+            <li>Language: <?= $language_film_1 ?></li>
+            <li>Movie Directors: <?= $movie_director_film_1 ?></li>
+            <li>Actors: <?php
+            foreach ($actors_film_1 as $actor) {
+                echo $actor . ', ';
+            }    
+            ?> 
+            </li>
+            <li>Genres: <?php
+            foreach ($genres_film_1 as $genre) {
+                echo $genre . ', ';
+            }
+            ?> 
+            </li>
+        </ul>
+    </div>
+    <div class="div">
+        <h1><?= $nome_film_2 ?></h1>
+        <ul>
+            <li>Budget: <?= $budget_film_2 ?> &euro;</li>
+            <li>Duration: <?= $duration_film_2 ?> min</li>
+            <li>Language: <?= $language_film_2 ?></li>
+            <li>Movie Directors: <?= $movie_director_film_2 ?></li>
+            <li>Actors: <?php
+            foreach ($actors_film_2 as $actor) {
+                echo $actor . ', ';
+            }    
+            ?> 
+            </li>
+            <li>Genres: <?php
+            foreach ($genres_film_2 as $genre) {
+                echo $genre . ', ';
+            }
+            ?> 
+            </li>
+        </ul>
+    </div>
+</body>
+</html>
