@@ -53,18 +53,14 @@ class Movie
     public function setActors($actors)
     {
       if (is_array($actors)) {
-        foreach ($actors as $actor) {
-              $this->actors[] = $actor;
-            }
+          $this->actors = $actors;
         }
     }
     public function setGenres($genres)
     {
       if (is_array($genres)) {
-        foreach ($genres as $genre) {
-              $this->genres[] = $genre;
-            }
-        }
+        $this->genres = $genres;
+      }
     }
 
     //GET
@@ -119,7 +115,7 @@ $genres_film_1 = $movie_1->getGenres();
 $movie_2 = new Movie('Donnie Darko', 2001, ['Jake Gyllenhaal', 'Jena Malone', 'JDrew Barrymore', 'Mary McDonnell:', 'Maggie Gyllenhaal'], 'Richard Kelly');
 $movie_2->setDuration(133);
 $movie_2->setLanguage('en');
-$movie_2->setBudget(45000000);
+$movie_2->setBudget(10000000000);
 $movie_2->setGenres(['fantascienza', 'thriller', 'drammatico']);
 $budget_film_2 = $movie_2->getBudget();
 $duration_film_2 = $movie_2->getDuration();
@@ -128,7 +124,6 @@ $nome_film_2 = $movie_2->getName();
 $actors_film_2 = $movie_2->getActors();
 $movie_director_film_2 = $movie_2->getMovie_director();
 $genres_film_2 = $movie_2->getGenres();
-
 
 if ($budget_film_1 > $budget_film_2) {
     echo 'Film più costoso: '. $nome_film_1; 
